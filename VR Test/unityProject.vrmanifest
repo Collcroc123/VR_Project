@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vrboats.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\colli\\Documents\\Unity\\VR Test\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\colli\\Documents\\Repos\\VR_Project\\VR Test\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "VR Boats [Testing]"
