@@ -23,7 +23,6 @@ namespace Valve.VR.InteractionSystem
 			capsuleCollider = GetComponent<CapsuleCollider>();
 		}
 
-
 		//-------------------------------------------------
 		void FixedUpdate()
 		{
@@ -32,7 +31,7 @@ namespace Valve.VR.InteractionSystem
 			capsuleCollider.height = Mathf.Max( capsuleCollider.radius, distanceFromFloor );
 			transform.localPosition = head.localPosition - 0.5f * distanceFromFloor * Vector3.up;
 			transform.rotation = Quaternion.Euler(new Vector3(0, yHead, 0));
-			//transform.localRotation = new Quaternion(0,head.transform.localRotation.y,0,0);
+			//transform.localRotation = new Quate///rnion(0,head.transform.localRotation.y,0,0);
 		}
 	}
 }
