@@ -1,0 +1,37 @@
+﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+//
+// Purpose: Collider dangling from the player's head
+//
+//=============================================================================
+
+using UnityEngine;
+using System.Collections;
+
+namespace Valve.VR.InteractionSystem
+{
+	//-------------------------------------------------------------------------
+	[RequireComponent( typeof( CharacterController ) )]
+	public class BodyCollider1 : MonoBehaviour
+	{
+		public Transform head;
+		public float yHead;
+		private CharacterController capsuleCollider;
+
+		//-------------------------------------------------
+		void Awake()
+		{
+			capsuleCollider = GetComponent<CharacterController>();
+		}
+
+		//-------------------------------------------------
+		void FixedUpdate()
+		{
+			yHead = head.transform.localEulerAngles.y;
+			float distanceFromFloor = Vector3.Dot( head.localPosition, Vector3.up );
+			capsuleCollider.height = Mathf.Max( capsuleCollider.radius, distanceFromFloor );
+			transform.localPosition = head.localPosition - 0.5f * distanceFromFloor * Vector3.up;
+			transform.rotation = Quaternion.Euler(new Vector3(0, yHead, 0));
+			//transform.localRotation = new Quate///rnion(0,head.transform.localRotation.y,0,0);
+		}
+	}
+}
